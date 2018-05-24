@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title> Mi página </title>
+    <style>
+        td {
+            color: #012B36;
+        }
+
+        h2 {
+            background: #BBC3C5;
+        }
+
+        .sub {
+            text-decoration: underline;
+        }
+
+        #lista {
+            color: #1DA278;
+        }
+        #lista li{
+            list-style: none;
+            display: inline-block;
+            padding: 5px;
+            margin: 5px;
+            background: #ccc;
+            border-radius: 5px;
+        }
+        #lista li:hover{
+            background: #222;
+        }
+
+        #inventario {
+            border: 1px solid:#1DA278;
+        }
+
+        #inventario td:hover {
+            background: #012B36;
+            color:#FFF;
+        }
+    </style>
+    <script>
+        //var nombre=prompt("¿Quién eres?","Escribe tu nombre");
+        //alert("Hola "+nombre);
+        function mayor(){
+            var edad=19;
+            edad=parseInt(prompt("¿Cuál es tu edad?",0));
+            if(edad>18){
+                alert("Ya eres muy viejo");
+            } else if (edad==18){
+                alert("Tramita tu INE");
+            } else if(edad<18 && edad>15){
+                alert("Ponte a estudiar");
+            } else {
+                alert("Regresa al kinder");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Hola mundo</h1>
+    <h2 class="sub">Taller para desarrollar una aplicación web</h2>
+    <p>En este taller desarrollaremos una pequeña <b>aplicación web</b></p>
+    <h3 id="d1">Lista de conocimientos<br />necesarios para trabajar</h3>
+    <ul id="lista">
+        <li class="sub">HTML5</li>
+        <li >CSS3</li>
+        <li >Javascript</li>
+    </ul>
+    <table id="inventario" border="1">
+        <tr>
+            <td> Cantidad</td>
+            <td>Nombre</td>
+        </tr>
+        <tr>
+            <td class="sub"> 3</td>
+            <td>Laptop</td>
+        </tr>
+    </table>
+    <input type="button" value="calcular edad" onclick="mayor()" /> 
+</body>
+
+</html>
