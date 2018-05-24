@@ -57,11 +57,22 @@
                 alert("Regresa al kinder");
             }
         }
+        var dias=["Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","Domingo"];
+        function quediaes(){
+            var dia=parseInt(prompt("¿Que día es?","del 1 al 7"));
+            if(dia>0 && dia<8){
+                alert(dias[--dia]);
+            } else {
+                alert("Proporcionaste un día incorrecto");
+                quediaes();
+            }
+        }
     </script>
 </head>
 
 <body>
     <h1>Hola mundo</h1>
+    <a href="#" onmouseover="quediaes()">¿Qué día es?</a>
     <h2 class="sub">Taller para desarrollar una aplicación web</h2>
     <p>En este taller desarrollaremos una pequeña <b>aplicación web</b></p>
     <h3 id="d1">Lista de conocimientos<br />necesarios para trabajar</h3>
