@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> onResize </title>
+    <script>
+        
+        function agregar(){
+            var act_li=document.getElementById("act").value;
+            
+            var lista= document.getElementById("pendientes");
+            var num_elementos=lista.getElementsByTagName("li").length;
+            var actividad=document.createElement("li");
+            
+            //Texto del registro
+            var registro="<span>"+act_li+"</span>";
+            registro+="<a href='#' onclick='eliminar(this)'>X</a>";
+            registro+="<a href='#' onclick='actualizar(this)'>&and;</a>";
+            
+            actividad.innerHTML=registro;
+            lista.appendChild(actividad);
+            
+            document.getElementById("act").value="";
+        }
+        function eliminar(elemento){
+           var ul= elemento.parentNode.parentNode;
+            var li_eliminar=elemento.parentNode;
+            ul.removeChild(li_eliminar);
+        }
+        function actualizar(elemento){
+           var ul= elemento.parentNode.parentNode;
+           var li_eliminar=elemento.parentNode;
+           ul.removeChild(li_eliminar);
+        }
+    </script>
+</head>
+
+<body>
+    <label>
+        <input type="text" placeholder="Proporcione una actividad" id="act" value="" />
+    </label>
+    <input type="button" value="agregar" id="add" onclick="agregar()" >
+    <ul id="pendientes"> 
+    </ul>
+</body>
+</html>
